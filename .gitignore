@@ -1,0 +1,52 @@
+# Local environment and credentials (examples remain trackable)
+.env
+.env.*
+!.env.example
+
+# Python / FastAPI / MCP
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+coverage.xml
+*.egg-info/
+build/
+
+# Optional Node frontend
+node_modules/
+dist/
+.next/
+
+# Private keys and local Kubernetes credentials
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+id_ecdsa
+id_dsa
+.kube/
+kubeconfig
+kubeconfig.*
+*.kubeconfig
+
+# Terraform local data (keep .terraform.lock.hcl)
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Local security tooling cache
+.cache/
