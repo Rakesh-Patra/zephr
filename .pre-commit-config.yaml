@@ -1,0 +1,17 @@
+minimum_pre_commit_version: '3.5.0'
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks-system
+        pass_filenames: false
+        stages: [pre-commit]
+      # The standard hook scans staged changes, even with --all-files.
+      # This manual instance scans the working directory, including untracked files.
+      - id: gitleaks-system
+        alias: gitleaks-all
+        name: Detect hardcoded secrets in the working directory
+        entry: gitleaks dir --redact --verbose .
+        pass_filenames: false
+        always_run: true
+        stages: [manual]
